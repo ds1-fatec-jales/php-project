@@ -1,0 +1,10 @@
+This file 
+will be 
+used 
+for 
+the code 
+to count 
+all 
+the 
+lines 
+contained!
