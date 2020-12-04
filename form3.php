@@ -18,9 +18,11 @@ The quick brown -->
     <p> <button>Submit</button></p>
   </form>
   <?php
-  echo "Name: " . $_POST["name"];
+  $name = $_POST["name"];
+  $last_space_position = strrpos($name, ' ');
+  $text_without_last_word = substr($name, 0, $last_space_position);
+  echo "Name: " . $text_without_last_word;
   ?>
-
 </body>
 
 </html>
