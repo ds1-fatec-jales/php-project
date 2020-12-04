@@ -17,11 +17,15 @@ The quick brown -->
     <p>Full name: <input type="text" id="name" name="name" /></p>
     <p> <button>Submit</button></p>
   </form>
-  <?php
+  <?php 
+  if($_POST){
   $name = $_POST["name"];
+  //Get the position of last space
   $last_space_position = strrpos($name, ' ');
+  //Remove from the position
   $text_without_last_word = substr($name, 0, $last_space_position);
-  echo "Name: " . $text_without_last_word;
+  echo "Name without last word: " . $text_without_last_word;
+}
   ?>
 </body>
 
