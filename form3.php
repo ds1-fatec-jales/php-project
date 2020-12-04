@@ -14,13 +14,11 @@ The quick brown -->
 
 <body>
   <form action="" method="post">
-    <p>Your name: <input type="text" name="name" /></p>
-    <p>Your age: <input type="text" name="age" /></p>
+    <p>Full name: <input type="text" name="name" /></p>
     <p><input type="submit" /></p>
   </form>
   <?php
   echo "Input 1" . $_POST["name"];
-  echo "<br>Input 2: " . $_POST["age"];
   ?>
 </body>
 
