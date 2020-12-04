@@ -13,13 +13,14 @@ The quick brown -->
 </head>
 
 <body>
-  <form action="" method="post">
-    <p>Full name: <input type="text" name="name" /></p>
-    <p><input type="submit" /></p>
+  <form method="POST">
+    <p>Full name: <input type="text" id="name" name="name" /></p>
+    <p> <button>Submit</button></p>
   </form>
   <?php
-  echo "Input 1" . $_POST["name"];
+  echo "Name: " . $_POST["name"];
   ?>
+
 </body>
 
 </html>
