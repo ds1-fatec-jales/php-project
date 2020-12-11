@@ -15,10 +15,14 @@ require "functions.php";
     
     <div class="col-sm-6">
       <h3 class="text-center pt-5">Criar</h3>
-        <form action="criar.php" method="post">
+        <form action="update.php" method="post">
             <div class="form-group">
             <label for="username">Usuário</label>
-            <input type="text" name="username" class="form-control">
+            <?php                   
+            if(isset($_POST['user'])) {
+                echo '<input type="text" name="username" value='.$_POST['user'].'class="form-control">';
+            }
+            ?>
             </div>
             
              <div class="form-group">
@@ -26,19 +30,19 @@ require "functions.php";
             <input type="password" name="password" class="form-control">
             </div>
             
-            <input class="btn btn-primary" type="submit" name="submit" value="Criar">
+            <input class="btn btn-primary" type="submit" name="submit" value="Atualizar">
             <hr>
 
             <?php
-                if(isset($_POST['submit'])) {
-   
+                if(isset($_POST['username'])) {
+                    
                     $username = $_POST['username'];
                     $password = $_POST['password'];
-                       
+                                           
                     $connection = pg_connect("host=localhost port=5432 dbname=db_sistema user=heitor password=heitor"); 
 
                     if($connection) {
-                            createLogin($username,$password); 
+                            updateLogin($username,$password); 
                         } else {                        
                             die("Conexão com o banco de dados falhou!");                     
                         }

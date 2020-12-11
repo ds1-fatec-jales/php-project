@@ -1,3 +1,6 @@
+<?php
+require "functions.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +14,15 @@
 
             <?php                
                 session_start();
-                echo '<div class="p-3 mb-2 bg-success text-white">Olá, ' . $_SESSION["nome"] . '</div>'
+                echo '<div class="p-3 mb-2 bg-success text-white">Olá, ' . $_SESSION["nome"] . '</div>';
+                
+                $connection = pg_connect("host=localhost port=5432 dbname=db_sistema user=heitor password=heitor"); 
 
+                if($connection) {
+                        readLogin(); 
+                    } else {                        
+                        die("Conexão com o banco de dados falhou!");                     
+                    }
             ?>
 	 <hr>
 
